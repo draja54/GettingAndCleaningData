@@ -28,16 +28,16 @@ xTrain <- read.table("UCI HAR Dataset/train/X_train.txt")
 yTrain <- read.table("UCI HAR Dataset/train/Y_train.txt")
 subTrain <- read.table("UCI HAR Dataset/train/subject_train.txt")
 
-## Reading features and activity
-features<-read.table("UCI HAR Dataset/features.txt")
-activity<-read.table("UCI HAR Dataset/activity_labels.txt")
-
 ## Binding Test and Train Data
 X <- rbind(xTest,xTrain)
 Y <- rbind(yTest,yTrain)
 Sub <- rbind(subTest,subTrain)
 
 ## 2. Extracts only the measurements on the mean and standard deviation for each measurement.
+## Reading features and activity
+features<-read.table("UCI HAR Dataset/features.txt")
+activity<-read.table("UCI HAR Dataset/activity_labels.txt")
+
 ## getting feature indeces with mean() and std() in the names
 index<-grep("mean\\(\\)|std\\(\\)", features[,2])
 
